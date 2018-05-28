@@ -1,0 +1,4 @@
+-------------------------------------------------------------------------------
+Test set: com.nirtsruya.rsscrawler.repository.PostRepositoryTest
+-------------------------------------------------------------------------------
+Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.688 s - in com.nirtsruya.rsscrawler.repository.PostRepositoryTest
