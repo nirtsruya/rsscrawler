@@ -14,8 +14,6 @@ import org.springframework.stereotype.Service;
 import java.io.IOException;
 import java.net.MalformedURLException;
 import java.net.URL;
-import java.util.ArrayList;
-import java.util.List;
 
 @Service
 public class RSSCrawlerServiceImpl implements RSSCrawlerService {
@@ -33,7 +31,6 @@ public class RSSCrawlerServiceImpl implements RSSCrawlerService {
 
     @Override
     public void read(final String url) throws RSSCrawlerException {
-        final List<Post> posts = new ArrayList<>();
         try (final XmlReader reader = new XmlReader(new URL(url))) {
             final SyndFeed feed = new SyndFeedInput().build(reader);
             for (final SyndEntry entry : feed.getEntries()) {
@@ -50,7 +47,7 @@ public class RSSCrawlerServiceImpl implements RSSCrawlerService {
         } catch (IOException e) {
             throw new RSSCrawlerException("Error reading stream", e);
         } catch (FeedException e) {
-            throw new RSSCrawlerException("Error creating rss feed", e);
+            throw new RSSCrawlerException("Error creating rss feed for " + url, e);
         }
     }
 }
