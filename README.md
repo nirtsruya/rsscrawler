@@ -1,4 +1,7 @@
 This is a simple RSS crawler spring boot application.
+
+A simple UI is implemented using angular.
+
 In order to run it simply
 ```
 git clone https://github.com/nirtsruya/rsscrawler.git
