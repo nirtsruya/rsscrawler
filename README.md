@@ -32,3 +32,5 @@ POST /crawl
 ```
 
 On startup the application will start a thread that will start crawling on a sample rss feed.
+
+The homepage will auto refresh and display the list of the current urls that were crawled.
