@@ -21,9 +21,6 @@ public class RSSCrawler implements ApplicationListener<ApplicationReadyEvent> {
     @Override
     public void onApplicationEvent(final ApplicationReadyEvent event) {
         final Set<String> urls = new HashSet<>();
-        urls.add("http://rss.cnn.com/rss/edition.rss");
-        urls.add("https://www.economist.com/sections/business-finance/rss.xml");
-        urls.add("https://www.economist.com/sections/international/rss.xml");
-        rssCrawlerProcessor.crawl(urls);
+        rssCrawlerProcessor.crawl();
     }
 }
