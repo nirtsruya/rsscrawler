@@ -19,7 +19,7 @@ public class RSSCrawlerProcessorImpl implements RSSCrawlerProcessor {
     public RSSCrawlerProcessorImpl(final RSSCrawlerService rssCrawlerService,
                                    final FeedService feedService){
         this.rssCrawlerService = rssCrawlerService;
-        this.executor = Executors.newFixedThreadPool(4);
+        this.executor = Executors.newFixedThreadPool(Runtime.getRuntime().availableProcessors());
         this.feedService = feedService;
     }
 
