@@ -19,6 +19,8 @@ GET /posts
 
 will return a list of the crawled posts
 
+To add new urls to crawl, use the POST /crawl api.
+
 ```
 POST /crawl
 {
@@ -27,4 +29,3 @@ POST /crawl
 ```
 
 On startup the application will start a thread that will start crawling on a sample rss feed.
-To add new urls to crawl, use the POST /crawl api.
