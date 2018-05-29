@@ -6,6 +6,9 @@ import javafx.geometry.Pos;
 import org.junit.Before;
 import org.junit.Test;
 import org.junit.runner.RunWith;
+import org.mockito.InjectMocks;
+import org.mockito.Mock;
+import org.mockito.junit.MockitoJUnitRunner;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.boot.test.mock.mockito.MockBean;
@@ -20,15 +23,14 @@ import static org.mockito.Mockito.times;
 import static org.mockito.Mockito.verify;
 import static org.mockito.Mockito.when;
 
-@RunWith(SpringRunner.class)
-@SpringBootTest
+@RunWith(MockitoJUnitRunner.class)
 public class PostServiceTest {
 
-    @MockBean
+    @Mock
     private PostRepository postRepository;
 
-    @Autowired
-    private PostService postService;
+    @InjectMocks
+    private PostServiceImpl postService;
 
     private List<Post> mockPosts;
     private Post postMock;

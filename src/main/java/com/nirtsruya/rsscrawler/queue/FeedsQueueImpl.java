@@ -18,9 +18,10 @@ public class FeedsQueueImpl implements FeedsQueue {
     }
 
     @Override
-    public void addFeed(String url) throws QueueException {
+    public boolean addFeed(String url) throws QueueException {
         try {
             feeds.put(url);
+            return true;
         } catch (InterruptedException e) {
             Thread.currentThread().interrupt();
             throw new QueueException("Error inserting to queue", e);

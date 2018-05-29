@@ -8,7 +8,7 @@ public interface FeedsQueue {
      * @param url url of the feed
      * @throws QueueException if an exception occured
      */
-    void addFeed(final String url) throws QueueException;
+    boolean addFeed(final String url) throws QueueException;
 
     /**
      *

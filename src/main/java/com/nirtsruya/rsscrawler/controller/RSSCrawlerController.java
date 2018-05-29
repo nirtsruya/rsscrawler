@@ -6,9 +6,7 @@ import com.nirtsruya.rsscrawler.service.FeedService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestBody;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 /**
  * Crawler controller
@@ -30,7 +28,7 @@ public class RSSCrawlerController {
      * @return a crawl response, containing a unique id for that specific request.
      *  this should allow the user to track the status of the request. (currently not implemented)
      */
-    @PostMapping("/crawl")
+    @RequestMapping(path = "/crawl", method=RequestMethod.POST)
     public ResponseEntity<CrawlResponse> crawl(final @RequestBody CrawlRequest crawlRequest){
         this.feedService.addFeed(crawlRequest.getUrl());
         return new ResponseEntity<>(new CrawlResponse(), HttpStatus.OK);
