@@ -13,12 +13,14 @@ Paths:
 The homepage
 you will see the crawled posts being added to a table
 
+```
 GET /posts
+```
+
 will return a list of the crawled posts
 
-POST /crawl
-sample request body:
 ```
+POST /crawl
 {
     "url" : "http://rss"
 }
